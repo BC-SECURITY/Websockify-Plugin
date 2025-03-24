@@ -1,0 +1,12 @@
+name: Websockify Plugin
+authors:
+  - name: Anthony Rose
+    handle: '@Cx01N'
+    link: 'https://twitter.com/Cx01N_'
+software: ''
+techniques:
+  - T1090
+comments:
+  - https://github.com/novnc/websockify
+main: websockify_server.py
+auto_start: false
