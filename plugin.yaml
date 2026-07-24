@@ -10,3 +10,5 @@ comments:
   - https://github.com/novnc/websockify
 main: websockify_server.py
 auto_start: false
+python_deps:
+  - websockify
