@@ -52,6 +52,10 @@ class Plugin(BasePlugin):
             listen_host=source_host,
             listen_port=source_port,
         )
+        # LibProxyServer keeps ThreadingMixIn's block_on_close, so server_close()
+        # joins every live connection thread -- and each runs until its noVNC
+        # client disconnects. Without this, on_stop hangs on an open session.
+        self.websockify_server.daemon_threads = True
 
         self.websockify_proc = helpers.KThread(
             target=self.websockify_server.serve_forever
